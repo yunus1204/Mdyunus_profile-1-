@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Yunus M | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark {
+            background-color: #181818;
+            color: #f0f2f5;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #ff6f61;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        header.dark {
+            background-color: #1c1c1c;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        .links a {
+            margin-left: 15px;
+            font-weight: bold;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 20px;
+            background-color: #ff6f61;
+            transition: background-color 0.3s ease;
+        }
+
+        .links a:hover {
+            background-color: #ff3d2e;
+        }
+
+        /* Toggle Button */
+        .toggle-btn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            background-color: #ff6f61;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-btn:hover {
+            background-color: #ff3d2e;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to right, #007bff, #00d4ff);
+            padding: 50px 0;
+            color: #fff;
+        }
+
+        .hero.dark {
+            background: linear-gradient(to right, #1a1a1a, #333);
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+        }
+
+        .hero a {
+            color: #ffdd57;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .hero a:hover {
+            color: #ffc107;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #007bff;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        .card.dark {
+            background-color: #333;
+            color: #f0f2f5;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            background-color: #f9f9f9;
+        }
+
+        .card h4 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #ff6f61;
+        }
+
+        /* Background Color Alternating for Sections */
+        .bg-light {
+            background-color: #e3f2fd;
+        }
+
+        .bg-light.dark {
+            background-color: #222;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .skills-card.dark {
+            background-color: #444;
+            color: #f0f2f5;
+        }
+
+        .skills-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .skills-card i {
+            margin-right: 10px;
+            color: #007bff;
+            font-size: 1.5em;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer.dark {
+            background-color: #1c1c1c;
+        }
+
+        .footer a {
+            color: #ffdd57;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #ffc107;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <h1>Mohammed Yunus M</h1>
+            <div class="links">
+                <a href="https://linkedin.com/in/md-yunus" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                <a href="https://github.com/yunus1204" target="_blank"><i class="fab fa-github"></i>GitHub</a>
+                <a href="https://leetcode.com/u/yunus1024/" target="_blank"><i class="fab fa-leetcode"></i>LeetCode</a>
+            </div>
+            <button class="toggle-btn" id="theme-toggle">Toggle Theme</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container text-center">
+            <h2>Hi, I'm Mohammed Yunus M</h2>
+            <p>An aspiring software engineer passionate about Data Structures, Web Development, and Machine Learning.</p>
+            <p>Location: Tamil Nadu, India | Contact: <a href="mailto:yunusmohammedyunusm@gmail.com">yunusmohammedyunusm@gmail.com</a></p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section">
+        <div class="container">
+            <h3 class="section-title">Education</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>Bachelor of Engineering in Computer Science</h4>
+                    <p>Kongu Engineering College, Perundurai, Tamil Nadu</p>
+                    <p>2021 - 2025</p>
+                    <p>CGPA: 8.33 (till 6th semester)</p>
+                </div>
+                <div class="card">
+                    <h4>High School - HSC</h4>
+                    <p>Bharathi Vidya Bhavan Hr. Mat. School, Erode, Tamil Nadu</p>
+                    <p>2019 - 2020</p>
+                    <p>Percentage: 95%</p>
+                </div>
+                <div class="card">
+                    <h4>Secondary School - SSLC</h4>
+                    <p>Carmel Matriculation Higher Secondary School, Erode, Tamil Nadu</p>
+                    <p>2018 - 2019</p>
+                    <p>Percentage: 98%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <h3 class="section-title">Projects</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4><i class="fas fa-code"></i> MERN Stack Portfolio</h4>
+                    <p>Developed a portfolio website using the MERN stack.</p>
+                </div>
+                <div class="card">
+                    <h4><i class="fas fa-user-circle"></i> Personal Portfolio</h4>
+                    <p>Created a responsive personal portfolio website to showcase my projects and skills.</p>
+                </div>
+                <div class="card">
+                    <h4><i class="fas fa-comments"></i> Chat Application</h4>
+                    <p>Built a real-time chat application using Socket.IO and Node.js.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section">
+        <div class="container">
+            <h3 class="section-title">Skills</h3>
+            <div class="skills-container">
+                <div class="skills-card">
+                    <i class="fas fa-code"></i>
+                    <h4>Languages</h4>
+                    <p>Java, C, Python, HTML, JS, React JS, SQL</p>
+                </div>
+                <div class="skills-card">
+                    <i class="fas fa-cogs"></i>
+                    <h4>Frameworks & Tools</h4>
+                    <p>WordPress, Canva</p>
+                </div>
+                <div class="skills-card">
+                    <i class="fas fa-cloud"></i>
+                    <h4>Cloud</h4>
+                    <p>AWS (S3, EC2, Lambda, IAM)</p>
+                </div>
+                <div class="skills-card">
+                    <i class="fas fa-database"></i>
+                    <h4>Databases</h4>
+                    <p>MongoDB, SQL</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Mohammed Yunus M. All Rights Reserved.</p>
+        <p>Connect with me on <a href="https://linkedin.com/in/md-yunus" target="_blank">LinkedIn</a>, <a href="https://github.com/yunus1204" target="_blank">GitHub</a>, or <a href="https://leetcode.com/u/yunus1024/" target="_blank">LeetCode</a>.</p>
+    </footer>
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            document.querySelectorAll('header, .hero, .card, .footer').forEach(el => {
+                el.classList.toggle('dark');
+            });
+        });
+    </script>
+</body>
+</html>
